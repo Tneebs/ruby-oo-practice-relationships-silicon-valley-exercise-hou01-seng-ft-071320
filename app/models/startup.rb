@@ -72,16 +72,15 @@ class Startup
     end
 
     def sign_contract(vc,type_investment,amount_investment)
-        contract = FundingRound.new(self.name, vc)
+        contract = FundingRound.new(self, vc)
         contract.investment = amount_investment
         contract.type = type_investment
-        @contract = contract
         # binding.pry
     end
 
     def num_funding_rounds
-        num_of_rounds = FundingRound.all.size
-        @num_of_rounds = num_of_rounds
+        FundingRound.all.find_all  {|num| num.startup_name == self}.size
+            binding.pry
     end
     
     # private

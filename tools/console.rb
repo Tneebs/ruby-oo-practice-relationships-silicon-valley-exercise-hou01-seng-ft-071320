@@ -20,17 +20,18 @@ end
 company1 = Startup.new("Google","Bill","Tech")
 company2 = Startup.new("Amazon","Ted","Tech")
 company3 = Startup.new("Yahoo","John","Tech")
-company1.pivot("Microsoft","Design")
+# company1.pivot("Microsoft","Design")
 
 vc1 = VentureCapitalist.new("Angelo",90000000000000000)
 vc2 = VentureCapitalist.new("Josh",50)
 vc3 = VentureCapitalist.new("Brandon",10000000000)
 
-fr1 = FundingRound.new("Google","Angelo")
-fr2 = FundingRound.new("Netflix","Wilmar")
-fr3 = FundingRound.new("Hulu","Ed")
+fr1 = FundingRound.new(company1,vc1)
+fr2 = FundingRound.new(company2,vc2)
+fr3 = FundingRound.new(company3,vc3)
+fr4 = FundingRound.new(company1,vc3)
 
-company1.sign_contract("Ted","Ed",10)
+# company1.sign_contract("Ted","Ed",10)
 
 
 binding.pry
